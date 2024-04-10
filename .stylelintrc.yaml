@@ -1,0 +1,6 @@
+root: true
+extends:
+  - stylelint-prettier/recommended
+  - stylelint-config-standard-scss
+  - stylelint-config-prettier-scss
+  - stylelint-config-prettier

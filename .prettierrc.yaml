@@ -1,0 +1,18 @@
+# 此处配置基本涵盖日常开发
+# 官方文档：https://prettier.io/docs/en/options.html
+# .eslintrc.yaml,.stylelintrc.yaml默认引用该文件，修改此配置不会被编辑器及时读取，需在修改后reload window
+
+printWidth: 90 # 换行阈值
+# tabWidth: 2 # tab 宽度，默认使用editorconfig的indent_size或tab_width
+# useTabs: true # 是否使用tab缩进，默认使用editorconfig的 indent_style
+semi: false # 句末加分号
+singleQuote: true # 是否使用单引号
+quoteProps: as-needed # 给对象key加引号
+trailingComma: all # 最后一个对象元素加逗号
+bracketSpacing: true # 对象，数组属性前后加空格
+bracketSameLine: true # 标签结束符号>是否在最后一行
+arrowParens: avoid # x => {} 单个参数时不要有小括号
+requirePragma: false # 是否要注释来决定是否格式化代码
+proseWrap: preserve # 对于md文本的换行策略，什么都不做最好
+embeddedLanguageFormatting: auto # 格式化文件中嵌入的代码
+singleAttributePerLine: true # 每行只能有一个属性
