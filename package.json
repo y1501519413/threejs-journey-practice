@@ -1,7 +1,7 @@
 {
-  "name": "threejs-journey",
+  "name": "threejs-journey-practice",
   "version": "1.0.0",
-  "description": "JavaScript 3D library",
+  "description": "threejs练习",
   "type": "module",
   "scripts": {
     "dev": "vite",
