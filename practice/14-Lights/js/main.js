@@ -29,8 +29,8 @@ const scene = new T.Scene()
 const material = new T.MeshStandardMaterial()
 
 // 创建一个球体
-const shpere = new T.Mesh(new T.SphereGeometry(1, 20, 20), material)
-shpere.position.x = -2
+const sphere = new T.Mesh(new T.SphereGeometry(1, 20, 20), material)
+sphere.position.x = -2
 // 创建一个平面
 const plane = new T.Mesh(new T.PlaneGeometry(10, 10), material)
 plane.position.y = -1
@@ -43,7 +43,7 @@ const cube = new T.Mesh(new T.BoxGeometry(1, 1, 1), material)
 // 创建一个圆环
 const torus = new T.Mesh(new T.TorusGeometry(1, 0.3), material)
 torus.position.x = 2
-scene.add(shpere, plane, cube, torus)
+scene.add(sphere, plane, cube, torus)
 
 const axesHelper = new T.AxesHelper(3)
 scene.add(axesHelper)
@@ -64,7 +64,7 @@ const directionLightHelper = new T.DirectionalLightHelper(directionLight, 0.1)
 directionLight.position.x = 0
 directionLight.position.y = 0
 directionLight.position.z = -5
-directionLight.target = shpere
+directionLight.target = sphere
 // directionLight.target = torus
 scene.add(directionLight, directionLightHelper)
 const directionLightGui = gui.addFolder('定向光源')

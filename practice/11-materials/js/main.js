@@ -138,12 +138,12 @@ standardGui.add(material, 'aoMapIntensity').min(0).max(10).step(0.01)
 standardGui.add(material, 'displacementScale').min(0).max(1).step(0.01)
 
 // 创建一个球体
-const shpere = new T.Mesh(new T.SphereGeometry(1, 20, 20), material)
-shpere.geometry.setAttribute(
+const sphere = new T.Mesh(new T.SphereGeometry(1, 20, 20), material)
+sphere.geometry.setAttribute(
   'uv2',
-  new T.BufferAttribute(shpere.geometry.attributes.uv.array, 2),
+  new T.BufferAttribute(sphere.geometry.attributes.uv.array, 2),
 )
-shpere.position.x = -2.5
+sphere.position.x = -2.5
 
 // 创建一个平面
 const plane = new T.Mesh(new T.PlaneGeometry(1, 1), material)
@@ -159,7 +159,7 @@ torus.geometry.setAttribute(
 )
 torus.position.x = 2
 
-scene.add(shpere, plane, torus)
+scene.add(sphere, plane, torus)
 
 const axesHelper = new T.AxesHelper(3)
 scene.add(axesHelper)
@@ -221,11 +221,11 @@ const clock = new T.Clock()
 const render = () => {
   const elapsedTime = clock.getElapsedTime()
 
-  // shpere.rotation.y = elapsedTime * 0.1
+  // sphere.rotation.y = elapsedTime * 0.1
   // plane.rotation.y = elapsedTime * 0.3
   // torus.rotation.y = elapsedTime * 0.2
 
-  // shpere.rotation.x = elapsedTime * 0.1
+  // sphere.rotation.x = elapsedTime * 0.1
   // plane.rotation.x = elapsedTime * 0.3
   // torus.rotation.x = elapsedTime * 0.2
 

@@ -1,5 +1,5 @@
 import path from 'path'
-const currentClass = '14-Lights'
+const currentClass = '15-shadows'
 export default {
   root: `practice/${currentClass}/`,
   publicDir: path.resolve('static'),
