@@ -111,25 +111,32 @@ const scene = new T.Scene()
 /**
  * 网格标准材质
  */
-// const material = new T.MeshStandardMaterial()
-// material.metalness = 0
-// material.roughness = 1
-// material.map = doorColorTexture
-// material.aoMap = doorAmbientOcclusionTexture
-// material.aoMapIntensity = 1
-// material.displacementMap = doorHeightTexture
-// material.displacementScale = 0.05
-// material.metalnessMap = doorMetalnessTexture
-// material.roughnessMap = doorRoughnessTexture
-// material.normalMap = doorNormalTexture
-// material.normalScale.set(0.5, 0.5)
-// material.alphaMap = doorAlphaTexture
-// material.transparent = true
-
 const material = new T.MeshStandardMaterial()
-material.metalness = 1
-material.roughness = 0
-material.envMap = environmentMapTexture
+// 基本贴图
+material.map = doorColorTexture
+// 控制整个表面的不透明度，黑色表示完全透明，白色表示完全不透明
+material.alphaMap = doorAlphaTexture
+material.transparent = true
+// 环境遮挡贴图，线条覆盖在模型上
+material.aoMap = doorAmbientOcclusionTexture
+material.aoMapIntensity = 1
+// 位移贴图会影响网格顶点的位置，使模型凸起
+material.displacementMap = doorHeightTexture
+material.displacementScale = 0.1
+// 法线贴图，具有凹凸轮廓感
+material.normalMap = doorNormalTexture
+material.normalScale.set(0.5, 0.5)
+// 设置金属贴图后，金属度仅由金属贴图控制
+material.metalnessMap = doorMetalnessTexture
+material.metalness = 0.5
+// 设置粗糙度贴图后，粗糙度仅由粗糙贴图控制
+material.roughnessMap = doorRoughnessTexture
+material.roughness = 0.23
+
+// const material = new T.MeshStandardMaterial()
+// material.metalness = 1
+// material.roughness = 0
+// material.envMap = environmentMapTexture
 
 const standardGui = gui.addFolder('网格标准材质')
 standardGui.add(material, 'metalness').min(0).max(1).step(0.01).name('金属度')
@@ -137,7 +144,7 @@ standardGui.add(material, 'roughness').min(0).max(1).step(0.01).name('粗糙度'
 standardGui.add(material, 'aoMapIntensity').min(0).max(10).step(0.01)
 standardGui.add(material, 'displacementScale').min(0).max(1).step(0.01)
 
-// 创建一个球体
+// 创建球体
 const sphere = new T.Mesh(new T.SphereGeometry(1, 20, 20), material)
 sphere.geometry.setAttribute(
   'uv2',
@@ -145,13 +152,14 @@ sphere.geometry.setAttribute(
 )
 sphere.position.x = -2.5
 
-// 创建一个平面
-const plane = new T.Mesh(new T.PlaneGeometry(1, 1), material)
+// 创建平面
+const plane = new T.Mesh(new T.PlaneGeometry(1, 1, 100, 100), material)
 plane.geometry.setAttribute(
   'uv2',
   new T.BufferAttribute(plane.geometry.attributes.uv.array, 2),
 )
 
+// 创建圆环
 const torus = new T.Mesh(new T.TorusGeometry(1, 0.3), material)
 torus.geometry.setAttribute(
   'uv2',
@@ -187,7 +195,12 @@ const aspectRatio = sizes.width / sizes.height
 // 透视投影相机
 const camera = new T.PerspectiveCamera(60, aspectRatio, 0.1, 2000)
 // 设置相机的位置
-camera.position.set(1, 1, 2)
+const position = {
+  x: -0.2860163338666776,
+  y: -0.2097441952885631,
+  z: 0.7086929925177357,
+}
+camera.position.set(position.x, position.y, position.z)
 
 // 相机的视线，观察目标点的坐标，受限于动画渲染，需要随时改变观察角度
 camera.lookAt(0, 0, 0)
@@ -220,7 +233,7 @@ const clock = new T.Clock()
 
 const render = () => {
   const elapsedTime = clock.getElapsedTime()
-
+  // console.log('camera', camera.position)
   // sphere.rotation.y = elapsedTime * 0.1
   // plane.rotation.y = elapsedTime * 0.3
   // torus.rotation.y = elapsedTime * 0.2

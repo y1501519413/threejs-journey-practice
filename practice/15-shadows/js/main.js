@@ -98,7 +98,7 @@ directionalLight.shadow.camera.top = 2
 directionalLight.shadow.camera.right = 2
 directionalLight.shadow.camera.bottom = -2
 directionalLight.shadow.camera.left = -2
-// directionalLight.shadow.radius = 20
+directionalLight.shadow.radius = 20
 // console.log('directionalLight.shadow', directionalLight.shadow)
 const directionalLightHelper = new T.DirectionalLightHelper(directionalLight, 0.1)
 directionalLightHelper.visible = false
@@ -179,6 +179,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
  */
 renderer.setSize(sizes.width, sizes.height)
 renderer.shadowMap.enabled = true
+// 优化阴影效果
 // renderer.shadowMap.type = T.PCFSoftShadowMap
 
 const controls = new OrbitControls(camera, canvas)
@@ -204,13 +205,13 @@ const clock = new T.Clock()
 const render = () => {
   const elapsedTime = clock.getElapsedTime()
   // update mesh
-  sphere.position.x = Math.cos(elapsedTime) * 1.5
-  sphere.position.z = Math.sin(elapsedTime) * 1.5
-  sphere.position.y = Math.abs(Math.sin(elapsedTime * 3))
+  // sphere.position.x = Math.cos(elapsedTime) * 1.5
+  // sphere.position.z = Math.sin(elapsedTime) * 1.5
+  // sphere.position.y = Math.abs(Math.sin(elapsedTime * 3))
   // update shadow
-  sphereShadow.position.x = sphere.position.x
-  sphereShadow.position.z = sphere.position.z
-  sphereShadow.material.opacity = (1 - sphere.position.y) * 0.3
+  // sphereShadow.position.x = sphere.position.x
+  // sphereShadow.position.z = sphere.position.z
+  // sphereShadow.material.opacity = (1 - sphere.position.y) * 0.3
   // console.log('camera', camera)
   // plane.rotateZ(0.01)
   controls.update()
