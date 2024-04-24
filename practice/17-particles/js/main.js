@@ -66,6 +66,7 @@ const pointMaterials = new T.PointsMaterial({
   depthWrite: false,
   // 粒子重叠区域高亮
   blending: T.AdditiveBlending,
+  // 使用顶点着色
   vertexColors: true,
 })
 
