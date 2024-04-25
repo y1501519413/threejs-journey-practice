@@ -3,8 +3,27 @@
   padding: 0;
 }
 
+html,
+body {
+  background: #1e1a20;
+  scrollbar-width: thin;
+}
+
+/*
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: linear-gradient(to bottom, rgb(60 186 146), rgb(253 187 45));
+} */
+
 .webgl {
-  position: absolute;
+  position: fixed;
   outline: none;
   top: 0;
   left: 0;

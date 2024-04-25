@@ -1,5 +1,5 @@
 import path from 'path'
-const currentClass = '18-glaxy-generator'
+const currentClass = '20-physicals'
 export default {
   root: `practice/${currentClass}/`,
   publicDir: path.resolve('static'),
