@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  cannon-es:
+    specifier: ^0.15.1
+    version: 0.15.1
   gsap:
     specifier: ^3.5.1
     version: 3.5.1
@@ -36,7 +39,7 @@ devDependencies:
     version: 2.2.2
   cz-conventional-changelog:
     specifier: ^3.3.0
-    version: 3.3.0(@types/node@20.12.7)(typescript@4.6.3)
+    version: 3.3.0(@types/node@20.12.8)(typescript@4.6.3)
   eslint:
     specifier: ^8.12.0
     version: 8.37.0
@@ -81,7 +84,7 @@ devDependencies:
     version: 4.6.3
   vite:
     specifier: ^4.0.4
-    version: 4.0.4(@types/node@20.12.7)
+    version: 4.0.4(@types/node@20.12.8)
 
 packages:
   /@aashutoshrathi/word-wrap@1.2.6:
@@ -100,28 +103,28 @@ packages:
     engines: { node: '>=6.9.0' }
     requiresBuild: true
     dependencies:
-      '@babel/highlight': 7.24.2
+      '@babel/highlight': 7.24.5
       picocolors: 1.0.0
     dev: true
 
-  /@babel/helper-validator-identifier@7.22.20:
+  /@babel/helper-validator-identifier@7.24.5:
     resolution:
       {
-        integrity: sha512-Y4OZ+ytlatR8AI+8KZfKuL5urKp7qey08ha31L8b3BwewJAoJamTzyvxPR/5D+KkdJCGPq/+8TukHBlY10FX9A==,
+        integrity: sha512-3q93SSKX2TWCG30M2G2kwaKeTYgEUp5Snjuj8qm729SObL6nbtUldAi37qbxkD5gg3xnBio+f9nqpSepGZMvxA==,
       }
     engines: { node: '>=6.9.0' }
     requiresBuild: true
     dev: true
 
-  /@babel/highlight@7.24.2:
+  /@babel/highlight@7.24.5:
     resolution:
       {
-        integrity: sha512-Yac1ao4flkTxTteCDZLEvdxg2fZfz1v8M4QpaGypq/WPDqg3ijHYbDfs+LG5hvzSoqaSZ9/Z9lKSP3CjZjv+pA==,
+        integrity: sha512-8lLmua6AVh/8SLJRRVD6V8p73Hir9w5mJrhE+IPpILG31KKlI9iz5zmBYKcWPS59qSfgP9RaSBQSHHE81WKuEw==,
       }
     engines: { node: '>=6.9.0' }
     requiresBuild: true
     dependencies:
-      '@babel/helper-validator-identifier': 7.22.20
+      '@babel/helper-validator-identifier': 7.24.5
       chalk: 2.4.2
       js-tokens: 4.0.0
       picocolors: 1.0.0
@@ -179,7 +182,7 @@ packages:
     requiresBuild: true
     dependencies:
       '@commitlint/types': 19.0.3
-      ajv: 8.12.0
+      ajv: 8.13.0
     dev: true
     optional: true
 
@@ -270,7 +273,7 @@ packages:
       - '@swc/wasm'
     dev: true
 
-  /@commitlint/load@19.2.0(@types/node@20.12.7)(typescript@4.6.3):
+  /@commitlint/load@19.2.0(@types/node@20.12.8)(typescript@4.6.3):
     resolution:
       {
         integrity: sha512-XvxxLJTKqZojCxaBQ7u92qQLFMMZc4+p9qrIq/9kJDy8DOrEa7P1yx7Tjdc2u2JxIalqT4KOGraVgCE7eCYJyQ==,
@@ -284,7 +287,7 @@ packages:
       '@commitlint/types': 19.0.3
       chalk: 5.3.0
       cosmiconfig: 9.0.0(typescript@4.6.3)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.12.7)(cosmiconfig@9.0.0)(typescript@4.6.3)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.12.8)(cosmiconfig@9.0.0)(typescript@4.6.3)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -353,7 +356,7 @@ packages:
       '@commitlint/config-validator': 19.0.3
       '@commitlint/types': 19.0.3
       global-directory: 4.0.1
-      import-meta-resolve: 4.0.0
+      import-meta-resolve: 4.1.0
       lodash.mergewith: 4.6.2
       resolve-from: 5.0.0
     dev: true
@@ -962,7 +965,7 @@ packages:
       }
     requiresBuild: true
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.8
     dev: true
     optional: true
 
@@ -990,6 +993,15 @@ packages:
     resolution:
       {
         integrity: sha512-wq0cICSkRLVaf3UGLMGItu/PtdY7oaXaI/RVU+xliKVOtRna3PRY57ZDfztpDL0n11vfymMUnXv8QwYCO7L1wg==,
+      }
+    dependencies:
+      undici-types: 5.26.5
+    dev: true
+
+  /@types/node@20.12.8:
+    resolution:
+      {
+        integrity: sha512-NU0rJLJnshZWdE/097cdCBbyW1h4hEg0xpovcoAQYHl8dnEyp/NAOiE45pvc+Bd1Dt+2r94v2eGFpQJ4R7g+2w==,
       }
     dependencies:
       undici-types: 5.26.5
@@ -1500,6 +1512,20 @@ packages:
       uri-js: 4.4.1
     dev: true
 
+  /ajv@8.13.0:
+    resolution:
+      {
+        integrity: sha512-PRA911Blj99jR5RMeTunVbNXMF6Lp4vZXnk5GQjcnUWUTsrXtekg/pnmFFI2u/I36Y/2bITGS30GZCXei6uNkA==,
+      }
+    requiresBuild: true
+    dependencies:
+      fast-deep-equal: 3.1.3
+      json-schema-traverse: 1.0.0
+      require-from-string: 2.0.2
+      uri-js: 4.4.1
+    dev: true
+    optional: true
+
   /ajv@8.6.3:
     resolution:
       {
@@ -1817,6 +1843,13 @@ packages:
     engines: { node: '>=6' }
     dev: true
 
+  /cannon-es@0.15.1:
+    resolution:
+      {
+        integrity: sha512-NkrU8OkM5K4q7Ljj69nfwC5UmPuoiAga6v98Aus0QHTdgJFwBfPTDXRkc3qpGGOixdUisFzmJo0DpKWIi6N+4g==,
+      }
+    dev: false
+
   /chalk@2.4.2:
     resolution:
       {
@@ -2064,7 +2097,7 @@ packages:
     engines: { node: '>= 12' }
     dev: true
 
-  /commitizen@4.3.0(@types/node@20.12.7)(typescript@4.6.3):
+  /commitizen@4.3.0(@types/node@20.12.8)(typescript@4.6.3):
     resolution:
       {
         integrity: sha512-H0iNtClNEhT0fotHvGV3E9tDejDeS04sN1veIebsKYGMuGscFaswRoYJKmT3eW85eIJAs0F28bG2+a/9wCOfPw==,
@@ -2073,7 +2106,7 @@ packages:
     hasBin: true
     dependencies:
       cachedir: 2.3.0
-      cz-conventional-changelog: 3.3.0(@types/node@20.12.7)(typescript@4.6.3)
+      cz-conventional-changelog: 3.3.0(@types/node@20.12.8)(typescript@4.6.3)
       dedent: 0.7.0
       detect-indent: 6.1.0
       find-node-modules: 2.1.3
@@ -2370,7 +2403,7 @@ packages:
       - '@swc/wasm'
     dev: true
 
-  /cosmiconfig-typescript-loader@5.0.0(@types/node@20.12.7)(cosmiconfig@9.0.0)(typescript@4.6.3):
+  /cosmiconfig-typescript-loader@5.0.0(@types/node@20.12.8)(cosmiconfig@9.0.0)(typescript@4.6.3):
     resolution:
       {
         integrity: sha512-+8cK7jRAReYkMwMiG+bxhcNKiHJDM6bR9FD/nGBXOWdMLuYawjF5cGrtLilJ+LGd3ZjCXnJjR5DkfWPoIVlqJA==,
@@ -2382,7 +2415,7 @@ packages:
       cosmiconfig: '>=8.2'
       typescript: '>=4'
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.8
       cosmiconfig: 9.0.0(typescript@4.6.3)
       jiti: 1.21.0
       typescript: 4.6.3
@@ -2458,7 +2491,7 @@ packages:
     hasBin: true
     dev: true
 
-  /cz-conventional-changelog@3.3.0(@types/node@20.12.7)(typescript@4.6.3):
+  /cz-conventional-changelog@3.3.0(@types/node@20.12.8)(typescript@4.6.3):
     resolution:
       {
         integrity: sha512-U466fIzU5U22eES5lTNiNbZ+d8dfcHcssH4o7QsdWaCcRs/feIPCxKYSWkYBNs5mny7MvEfwpTLWjvbm94hecw==,
@@ -2466,13 +2499,13 @@ packages:
     engines: { node: '>= 10' }
     dependencies:
       chalk: 2.4.2
-      commitizen: 4.3.0(@types/node@20.12.7)(typescript@4.6.3)
+      commitizen: 4.3.0(@types/node@20.12.8)(typescript@4.6.3)
       conventional-commit-types: 3.0.0
       lodash.map: 4.6.0
       longest: 2.0.1
       word-wrap: 1.2.5
     optionalDependencies:
-      '@commitlint/load': 19.2.0(@types/node@20.12.7)(typescript@4.6.3)
+      '@commitlint/load': 19.2.0(@types/node@20.12.8)(typescript@4.6.3)
     transitivePeerDependencies:
       - '@types/node'
       - typescript
@@ -4099,10 +4132,10 @@ packages:
     engines: { node: '>=8' }
     dev: true
 
-  /import-meta-resolve@4.0.0:
+  /import-meta-resolve@4.1.0:
     resolution:
       {
-        integrity: sha512-okYUR7ZQPH+efeuMJGlq4f8ubUgO50kByRPyt/Cy1Io4PSRsPjxME+YlVaCOx+NIToW7hCsZNFJyTPFFKepRSA==,
+        integrity: sha512-I6fiaX09Xivtk+THaMfAwnA3MVA5Big1WHF1Dfx9hFuvNIWpXnorlkzhcQf6ehrqQiiZECRt1poOAkPmer3ruw==,
       }
     requiresBuild: true
     dev: true
@@ -7049,7 +7082,7 @@ packages:
       - supports-color
     dev: false
 
-  /vite@4.0.4(@types/node@20.12.7):
+  /vite@4.0.4(@types/node@20.12.8):
     resolution:
       {
         integrity: sha512-xevPU7M8FU0i/80DMR+YhgrzR5KS2ORy1B4xcX/cXLsvnUWvfHuqMmVU6N0YiJ4JWGRJJsLCgjEzKjG9/GKoSw==,
@@ -7077,7 +7110,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.12.7
+      '@types/node': 20.12.8
       esbuild: 0.16.17
       postcss: 8.4.38
       resolve: 1.22.8
