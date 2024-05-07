@@ -1,0 +1,35 @@
+{
+  "liveServer.settings.port": 5503,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  // eslint.validate 同样可以检测文件，官方已建议不再使用
+  // eslint.probe 默认还检测html及markdown
+  // html 及 markdown直接由 prettier 格式化
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ],
+  // 对于 svelte 项目必须使用 eslint.validate
+  "stylelint.validate": ["css", "scss", "less", "postcss"],
+  "[html]": {
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+  // tsconfig.json与jsconfig.json不会被[json]格式化
+  "[jsonc]": {
+    "editor.formatOnSave": true
+  },
+  "[markdown]": {
+    "editor.formatOnSave": true
+  },
+  "[yaml]": {
+    "editor.formatOnSave": true
+  }
+}

@@ -1,5 +1,5 @@
 import path from 'path'
-const currentClass = '20-physicals'
+const currentClass = '21-imported-models'
 export default {
   root: `practice/${currentClass}/`,
   publicDir: path.resolve('static'),

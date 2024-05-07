@@ -1,0 +1,25 @@
+{
+  "recommendations": [
+    "formulahendry.auto-close-tag", // 自动关闭标签
+    "formulahendry.auto-rename-tag", // 自动重命名标签
+    "MS-CEINTL.vscode-language-pack-zh-hans", // 中文语言包
+    "EditorConfig.EditorConfig", // 编辑器基础配置
+    "usernamehw.errorlens", // 错误提示
+    "dbaeumer.vscode-eslint", // eslint基础包
+    "GitHub.copilot", // GitHub Copilot
+    "GitHub.copilot-chat", // GitHub Copilot
+    "eamodio.gitlens", // 更方面的查看git记录
+    "vincaslt.highlight-matching-tag", // 匹配标签高亮
+    "ecmel.vscode-html-css", // 为htmlcss提供基础支持
+    "wix.vscode-import-cost", // 显示npm包大小
+    "ritwickdey.LiveServer", // 本地服务器
+    "DavidAnson.vscode-markdownlint", // 严格限制markdown格式
+    "christian-kohler.npm-intellisense", // 帮助完成 npm 引入语法
+    "csstools.postcss", // postcss 支持
+    "esbenp.prettier-vscode", // prettier 风格插件
+    "stylelint.vscode-stylelint", // 严格限制CSS格式
+    "bradlc.vscode-tailwindcss", // tailwindcss 支持
+    "vscode-icons-team.vscode-icons", // 文件图标
+    "redhat.vscode-yaml" // 检测yaml配置文件是否规范
+  ]
+}

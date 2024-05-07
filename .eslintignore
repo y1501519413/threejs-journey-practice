@@ -2,3 +2,4 @@
 **/*.module.js
 build
 node_modules
+static
