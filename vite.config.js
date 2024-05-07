@@ -1,5 +1,5 @@
 import path from 'path'
-const currentClass = '21-imported-models'
+const currentClass = '22-raycaster-mouse-event'
 export default {
   root: `practice/${currentClass}/`,
   publicDir: path.resolve('static'),
